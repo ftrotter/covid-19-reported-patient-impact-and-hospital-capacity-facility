@@ -54,8 +54,6 @@ done
 echo "uploading pre-preprocessing.zip to s3"
 aws s3 cp pre-processing/pre-processing-code/pre-processing-code.zip s3://$S3_BUCKET/$DATASET_NAME/automation/pre-processing-code.zip --region "$REGION$PROFILE"
 
-exit 0
-
 #creating dataset on ADX
 echo "creating dataset on ADX"
 DATASET_COMMAND="aws dataexchange create-data-set --asset-type "S3_SNAPSHOT" --description file://dataset-description.md --name \"${PRODUCT_NAME}\" --region $REGION --output json $PROFILE"
