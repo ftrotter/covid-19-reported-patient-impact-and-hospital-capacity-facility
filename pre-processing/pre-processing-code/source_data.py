@@ -10,13 +10,15 @@ from boto3.s3.transfer import TransferConfig
 from io import BytesIO
 
 def source_dataset():
-    src_url_template = 'https://healthdata.gov/sites/default/files/reported_hospital_capacity_admissions_facility-level_weekly_average_timeseries_{}.csv'
+    # src_url_template = 'https://healthdata.gov/sites/default/files/reported_hospital_capacity_admissions_facility-level_weekly_average_timeseries_{}.csv'
 
-    now = datetime.datetime.now()
-    date_str = now.strftime("%Y%m%d")
-    source_dataset_url = src_url_template.format(date_str)
+    # now = datetime.datetime.now()
+    # date_str = now.strftime("%Y%m%d")
+    # source_dataset_url = src_url_template.format(date_str)
 
     # source_dataset_url = src_url_template.format('20201207')
+
+    source_dataset_url = 'https://healthdata.gov/node/3651441/download'
 
     print(source_dataset_url)
     
@@ -37,7 +39,7 @@ def source_dataset():
             break
             
     if response is None:
-        raise Exception('There was an issue downloading the dataset')
+        raise Exception('There was an issue downloading the dataset.')
             
     data_set_name = os.environ['DATA_SET_NAME']
 
