@@ -18,7 +18,9 @@ def source_dataset():
 
     # source_dataset_url = src_url_template.format('20201207')
 
-    source_dataset_url = 'https://healthdata.gov/node/3651441/download'
+    # TODO the API is changing and this url is being retired.. using the legacy domain will fix things temporarily
+    # But porting to the new API should happen soonishly..
+    source_dataset_url = 'https://legacy.healthdata.gov/node/3651441/download'
 
     print(source_dataset_url)
     
